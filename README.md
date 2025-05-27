@@ -30,7 +30,7 @@ Comandos:
 * El script bot.py debera estar corriendo para poder hacer uso del granSuperviviente.
 
 ## Herramientas necesarias
-
+* Preferentemente usar algun editor de codigo.
 * Tener instalado python y las dependencias necesarias.
 
 Descarga de [python](https://www.python.org/downloads/) y dependencias
@@ -42,14 +42,17 @@ pip install --upgrade discord.py mcrcon
 ## EMPECEMOS! 🚀
 
 * Generar [bot de discord](https://discord.com/developers/applications)
+Una vez creado el bot :
 
-Una vez creado ir al menu Bot > Token y generar el token para el siguiente paso.
+Ir al menu Installation, en Default Install Settings > Guild Install > Scope : agregar bot
 
-Tambien podemos ir al menu Installation, en Default Install Settings > Guild Install > Scope : agregar bot
-
- y en Default Install Settings > Guild Install > Permissions : agregar Administrador
+y en Default Install Settings > Guild Install > Permissions : agregar Administrador.
 
 Luego en Install Link podremos invitarlo a nuestro servidor de discord.
+
+Ir al menu Bot > Token y generar el token para el siguiente paso.
+
+Tambien en el menu Bot > Privileged Gateway Intents > Message Content Intent : Activar esta opcion.
 
 * Modificar bot.py : 
 ```Python

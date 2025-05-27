@@ -17,9 +17,9 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.command()
 async def info(ctx):
     await ctx.send("INFO DEL SERVER")
-    await ctx.send("IP : ") # Nuestra IP publica
+    await ctx.send("IP : Mi ip") # Mi IP
     await ctx.send("PORT : 16261")
-    await ctx.send("Password : ") # Nuestra password
+    await ctx.send("Password : demo") # Password del servidor
 
 @bot.command()
 async def start(ctx):
@@ -29,7 +29,7 @@ async def start(ctx):
             await ctx.send("⚠️ El servidor ya esta en funcionamiento.")
             return
 
-        file_path = "C:\\pzserver\\StartServer64.bat"   # Path de StartServer
+        file_path = "C:\\pzserver\\StartServer64.bat"   # Ruta del ejecutable del servidor
         server_process = subprocess.Popen([file_path], shell=True)
         await ctx.send("🚀 Iniciando servidor.")
 
@@ -60,7 +60,7 @@ async def restart(ctx):
 async def players(ctx):
     host = "127.0.0.1"
     port = 27015
-    password = "passwordRCON"
+    password = "4356"
 
     try:
         with MCRcon(host, password, port) as mcr:
@@ -71,4 +71,4 @@ async def players(ctx):
 
 
 # Token
-bot.run('MTM3NjkxNTQ5NDkwODcyMzMyMg.GXCqu7.RMdynjmZckZNulJVl5H55iWQOjJAejOnN84HbA')
+bot.run('') # Token generado por el bot
