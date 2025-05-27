@@ -24,10 +24,10 @@ Comandos:
 ```
 
 ## Cosas a tener en cuenta
-* [Aqui](link) Se encuentra el tutorial para crear el servidor dedicado.
-* [Aqui](Link) Se encuentra el tutorial de la creacion de este Bot.
+* [Aqui](https://www.youtube.com/watch?v=sGcSKe5olWA) Se encuentra el tutorial para crear el servidor dedicado.
+* [Aqui](https://www.youtube.com/watch?v=QujGCG4VMvU) Se encuentra el tutorial de la creacion de este Bot.
 * Esta pensado para su uso en Windows, no fue probado en linux y seguro necesita modificaciones para ello.
-* El script bot.py debera estar corriendo para poder hacer uso del granSuperviviente.
+* El script granSuperviviente.py debera estar corriendo para poder hacer uso del granSuperviviente.
 
 ## Herramientas necesarias
 * Preferentemente usar algun editor de codigo.
@@ -54,7 +54,7 @@ Ir al menu Bot > Token y generar el token para el siguiente paso.
 
 Tambien en el menu Bot > Privileged Gateway Intents > Message Content Intent : Activar esta opcion.
 
-* Modificar bot.py : 
+* Modificar granSuperviviente.py : 
 ```Python
 @bot.command()
 async def info(ctx):
