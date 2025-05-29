@@ -1,4 +1,4 @@
-# GranSuperviviente
+# ![Spiffo](img/emote.png) GranSuperviviente 
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
 
@@ -14,7 +14,7 @@ El bot se usara mediante comandos que permitiran controlar el servidor dedicado.
 
 ```
 👶 Usuario : !start
-🧟‍♂️ Bot : 🚀 Iniciando servidor.
+🧟 Bot : 🚀 Iniciando servidor.
 👶 Usuario : !stop
 🧟‍♂️ Bot : 🚩 Apagando servidor.
 ```
