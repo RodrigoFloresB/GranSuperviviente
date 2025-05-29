@@ -5,7 +5,7 @@
 > 🧟 Bot de discord para poder controlar un servidor dedicado de Project Zomboid.
 
 ## Tutorial Completo (servidor dedicado + bot de discord)
-* [Link Aqui]() Tutorial completo en Youtube.
+* [Link Aqui](https://www.youtube.com/watch?v=Zu_9MWfT_A4&t=0s) Tutorial completo en Youtube.
 * [Comandos](Server.md) Usados para la creacion del servidor.
 
 
