@@ -2,10 +2,15 @@
 
 [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
 
-> 🧟 Bot de discord para poder controlar un servidor dedicado de Project Zomboid 
+> 🧟 Bot de discord para poder controlar un servidor dedicado de Project Zomboid.
+
+## Tutorial Completo (servidor dedicado + bot de discord)
+* [Link Aqui]() Tutorial completo en Youtube.
+* [Comandos](Server.md) Usados para la creacion del servidor.
+
 
 ## Uso
-El bot se usara mediante comandos que permitiran controlar el servidor dedicado
+El bot se usara mediante comandos que permitiran controlar el servidor dedicado.
 
 ```
 👶 Usuario : !start
@@ -24,8 +29,8 @@ Comandos:
 ```
 
 ## Cosas a tener en cuenta
-* [Aqui](https://www.youtube.com/watch?v=sGcSKe5olWA) Se encuentra el tutorial para crear el servidor dedicado.
-* [Aqui](https://www.youtube.com/watch?v=QujGCG4VMvU) Se encuentra el tutorial de la creacion de este Bot.
+* ~~[Aqui](https://www.youtube.com/watch?v=sGcSKe5olWA) Se encuentra una explacion respecto al servidor dedicado (Old).~~
+* ~~[Aqui](https://www.youtube.com/watch?v=QujGCG4VMvU) Se encuentra el tutorial de la creacion de este Bot (Old).~~
 * Esta pensado para su uso en Windows, no fue probado en linux y seguro necesita modificaciones para ello.
 * El script granSuperviviente.py debera estar corriendo para poder hacer uso del granSuperviviente.
 
@@ -33,7 +38,7 @@ Comandos:
 * Preferentemente usar algun editor de codigo.
 * Tener instalado python y las dependencias necesarias.
 
-Descarga de [python](https://www.python.org/downloads/) y dependencias
+Descarga de [python](https://www.python.org/downloads/) y dependencias.
 
 ```shell
 pip install --upgrade discord.py mcrcon
@@ -44,42 +49,22 @@ pip install --upgrade discord.py mcrcon
 * Generar [bot de discord](https://discord.com/developers/applications)
 Una vez creado el bot :
 
-Ir al menu Installation, en Default Install Settings > Guild Install > Scope : agregar bot
+Ir al menu *Installation*, en *Default Install Settings > Guild Install > Scope* : agregar bot
 
-y en Default Install Settings > Guild Install > Permissions : agregar Administrador.
+y en *Default Install Settings > Guild Install > Permissions* : agregar Administrador.
 
-Luego en Install Link podremos invitarlo a nuestro servidor de discord.
+Luego en *Install Link* podremos invitarlo a nuestro servidor de discord.
 
-Ir al menu Bot > Token y generar el token para el siguiente paso.
+Ir al menu *Bot > Token* y generar el token para el siguiente paso.
 
-Tambien en el menu Bot > Privileged Gateway Intents > Message Content Intent : Activar esta opcion.
+Tambien en el menu *Bot > Privileged Gateway Intents > Message Content Intent* : Activar esta opcion.
 
 * Modificar granSuperviviente.py : 
 ```Python
-@bot.command()
-async def info(ctx):
-    await ctx.send("INFO DEL SERVER")
-    await ctx.send("IP : ") # Nuestra IP publica
-    await ctx.send("PORT : 16261")
-    await ctx.send("Password : ") # Nuestra password
-```
-
-```Python
-async def start(ctx):
-    global server_process
-    try:
-        if server_process is not None and server_process.poll() is None:
-            await ctx.send("⚠️ El servidor ya esta en funcionamiento.")
-            return
-
-        file_path = "C:\\pzserver\\StartServer64.bat"   # Path de StartServer
-        server_process = subprocess.Popen([file_path], shell=True)
-        await ctx.send("🚀 Iniciando servidor.")
-
-    except Exception as e:
-        await ctx.send(f"❌ Error al iniciar el servidor: {e}")
-```
-
-```Python
-bot.run('tokenDeMiBot')
+# ---- Configs ----
+passwordServer = "" 
+passwordRcon = ""   
+filePatch = ""
+publicIP = ""
+token = ''
 ```

@@ -4,11 +4,18 @@ import asyncio
 import subprocess
 import discord
 
+# ---- Configs ----
+passwordServer = "" 
+passwordRcon = ""   
+filePatch = ""
+publicIP = ""
+token = ''
 
 # Definir los intents requeridos
 intents = discord.Intents.default()
 intents.message_content = True
 server_process = None
+
 
 # Crear el bot con prefix "!"
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -17,9 +24,9 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 @bot.command()
 async def info(ctx):
     await ctx.send("INFO DEL SERVER")
-    await ctx.send("IP : Mi ip") # Mi IP
+    await ctx.send("IP :" + publicIP) # Mi IP
     await ctx.send("PORT : 16261")
-    await ctx.send("Password : demo") # Password del servidor
+    await ctx.send("Password : " + passwordServer) # Password del servidor
 
 @bot.command()
 async def start(ctx):
@@ -29,7 +36,7 @@ async def start(ctx):
             await ctx.send("⚠️ El servidor ya esta en funcionamiento.")
             return
 
-        file_path = "C:\\pzserver\\StartServer64.bat"   # Ruta del ejecutable del servidor
+        file_path = filePatch  # Ruta del ejecutable del servidor
         server_process = subprocess.Popen([file_path], shell=True)
         await ctx.send("🚀 Iniciando servidor.")
 
@@ -41,8 +48,11 @@ async def stop(ctx):
     global server_process
     try:
         if server_process is not None and server_process.poll() is None:
+            with MCRcon("127.0.0.1", passwordRcon, port=27015) as mcr:
+                mcr.command("quit")
+            await ctx.send("🔴 Servidor cerrado correctamente.")
+            await asyncio.sleep(10)
             server_process.terminate()
-            await ctx.send("🚩 Apagando servidor.")
         else:
             await ctx.send("⚠️ El servidor no esta en ejecucion.")
 
@@ -53,14 +63,14 @@ async def stop(ctx):
 async def restart(ctx):
     await ctx.send("🔁 Reiniciando el servidor...")
     await stop(ctx)
-    await asyncio.sleep(15)  # Espera un poco antes de volver a iniciar
+    await asyncio.sleep(20)  # Espera un poco antes de volver a iniciar
     await start(ctx)
 
 @bot.command()
 async def players(ctx):
     host = "127.0.0.1"
     port = 27015
-    password = "4356"
+    password = passwordRcon
 
     try:
         with MCRcon(host, password, port) as mcr:
@@ -71,4 +81,4 @@ async def players(ctx):
 
 
 # Token
-bot.run('') # Token generado por el bot
+bot.run(token) # Token generado por el bot
